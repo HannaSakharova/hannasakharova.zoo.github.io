@@ -10,6 +10,15 @@
 	&-black {
 		color: #000;
 	}
+	@media (max-width: $md2 + px) {
+		font-size: 52px;
+	}
+	@media (max-width: $md3 + px) {
+		font-size: 47px;
+	}
+	@media (max-width: $md4 + px) {
+		font-size: 40px;
+	}
 }
 
 .text {

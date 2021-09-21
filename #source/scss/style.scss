@@ -45,8 +45,55 @@ body {
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
-	&.loaded {
+}
+
+.scrolled .header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 80px;
+	background: #fff;
+	padding: 9px 0px;
+}
+
+.scrolled .header__content {
+	height: 62px;
+}
+
+.scrolled .menu__link {
+	color: #000;
+	border-bottom: 2px solid transparent;
+	transition: border 0.3s ease 0s;
+}
+
+.scrolled .menu__link:hover {
+	border-bottom: 2px solid #961914;
+}
+.scrolled .header__img {
+	width: 62px;
+}
+.scrolled .icon-menu span {
+	background-color: #000;
+}
+
+@media (max-width: $md4 + px) {
+	.scrolled .header {
+		height: 58px;
+		padding: 0px 0px 10px 0;
 	}
+	.scrolled .header__img {
+		width: 32px;
+	}
+	// .scrolled .menu__body:before {
+	// 	content: "";
+	// 	position: fixed;
+	// 	height: 58px;
+	// 	padding: 0px 0px 10px 0;
+	// 	top: 0;
+	// 	left: 0;
+	// 	width: 100%;
+	// }
 }
 //</ОБОЛОЧКА>============================================================================================
 
@@ -75,6 +122,7 @@ body {
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>========================================================
 @import "popup";
+@import "slider";
 @import "header";
 @import "footer";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>=======================================================
@@ -84,15 +132,14 @@ body {
 	flex: 1 1 auto;
 	&__mainblock {
 	}
+	&__info {
+	}
 }
 //=======================================================================================================
 .mainblock {
 	position: relative;
-	// height: 100vh;
-
 	&__container {
 	}
-
 	&__body {
 		padding: 225px 0px;
 		position: relative;
@@ -108,7 +155,6 @@ body {
 			max-width: 100%;
 		}
 	}
-
 	&__title {
 		font-family: "Oswald", sans-serif;
 		font-weight: bold;
@@ -158,25 +204,22 @@ body {
 			margin: 0px 0px 24px 0px;
 		}
 	}
-
 	&__text {
 		font-size: 20px;
 		line-height: 140%;
 		color: #ffffff;
 		margin: 0px 0px 25px 0px;
+		z-index: 5;
 		@media (max-width: $md4 + px) {
 			font-size: 18px;
 			line-height: 140%;
 			margin: 0px 0px 48px 0px;
 		}
 	}
-
 	&__link {
 	}
-
 	&__btn {
 	}
-
 	&__img {
 		position: absolute;
 		width: 100%;
@@ -187,7 +230,237 @@ body {
 		}
 	}
 }
+.logo-text {
+	position: absolute;
+	z-index: 1;
+	bottom: 15%;
+	right: -21px;
+	width: 168px;
+	height: 548px;
+	@media (max-width: $md3 + px) {
+		bottom: 7px;
+		right: -24px;
+		width: 156px;
+		height: 334px;
+	}
+}
 //=======================================================================================================
+.info {
+	padding: 180px 0px;
+	@media (max-width: $md2 + px) {
+		padding: 150px 0px;
+	}
+	@media (max-width: $md3 + px) {
+		padding: 100px 0px;
+	}
+	@media (max-width: $md4 + px) {
+		padding: 60px 0px;
+	}
+	&__container {
+	}
+	&__column {
+		&:first-child {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin: 0px 0px 80px 0px;
+			@media (max-width: $md2 + px) {
+				flex-direction: column;
+				margin: 0px 0px 70px 0px;
+			}
+			@media (max-width: $md3 + px) {
+				margin: 0px 0px 40px 0px;
+			}
+			@media (max-width: 600px) {
+				margin: 0px 0px 0px 0px;
+			}
+		}
+	}
+	&__item {
+		&:first-child {
+			width: 584px;
+			@media (max-width: $md2 + px) {
+				width: 100%;
+				margin: 0px 0px 30px 0px;
+			}
+			@media (max-width: $md4 + px) {
+				margin: 0px 0px 20px 0px;
+			}
+		}
+		&:last-child {
+			img {
+				width: 588px;
+				height: 523px;
+				@media (max-width: 1200px) {
+					width: 488px;
+					height: auto;
+				}
+				@media (max-width: $md2 + px) {
+					width: 100%;
+				}
+			}
+		}
+	}
+	&__title {
+		margin: 0px 0px 32px 0px;
+		@media (max-width: $md2 + px) {
+			text-align: center;
+		}
+		@media (max-width: $md3 + px) {
+			margin: 0px 0px 25px 0px;
+		}
+		@media (max-width: $md4 + px) {
+			margin: 0px 0px 15px 0px;
+		}
+	}
+	&__text {
+		margin: 0px 0px 24px 0px;
+		@media (max-width: $md2 + px) {
+			text-align: center;
+		}
+		@media (max-width: $md3 + px) {
+			margin: 0px 0px 20px 0px;
+		}
+		@media (max-width: $md4 + px) {
+			margin: 0px 0px 15px 0px;
+		}
+	}
+	&__subtitle {
+		margin: 0px 0px 16px 0px;
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 130%;
+		color: #000000;
+	}
+	&__benefits {
+		font-size: 16px;
+		line-height: 140%;
+		margin: 0px 0px 10px 0px;
+		padding: 0px 0px 0px 12px;
+		position: relative;
+		&:after {
+			content: "";
+			top: 7px;
+			left: 0;
+			position: absolute;
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			background-color: #961914;
+		}
+		&:last-child {
+			margin: 0px 0px 0px 0px;
+		}
+		@media (max-width: $md4 + px) {
+			margin: 0px 0px 7px 0px;
+		}
+	}
+}
+
+.info__slider {
+	display: none;
+	@media (max-width: 600px) {
+		display: block;
+		min-width: 0;
+	}
+}
+.column-composition {
+	background-color: #ead1d0;
+	padding: 32px 80px;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	&:before {
+		content: url("../img/items/barf-vector.png");
+		position: absolute;
+		top: 44px;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		@media (max-width: 600px) {
+			transform: rotate(90deg);
+		}
+	}
+	@media (max-width: 1220px) {
+		padding: 32px 50px;
+	}
+	@media (max-width: $md2 + px) {
+		flex-direction: column;
+		padding: 30px 70px;
+	}
+	@media (max-width: 600px) {
+		min-width: 0;
+		padding: 56px 55px 24px;
+	}
+	@media (max-width: 340px) {
+		padding: 50px 40px 24px;
+	}
+	&__item {
+		@media (max-width: 600px) {
+			display: none;
+		}
+	}
+}
+.composition-item {
+	@media (max-width: $md2 + px) {
+		text-align: center;
+		margin: 0px 0px 30px 0px;
+		&:last-child {
+			margin: 0px 0px 0px 0px;
+		}
+	}
+	@media (max-width: 600px) {
+		text-align: left;
+	}
+	&__title {
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 200%;
+		text-transform: uppercase;
+		color: #000000;
+		margin: 0px 0px 16px 0px;
+	}
+	&__body {
+		display: flex;
+		@media (max-width: $md2 + px) {
+			justify-content: center;
+		}
+		@media (max-width: 600px) {
+			flex-direction: column;
+			margin: 0px 0px 40px 0px;
+		}
+	}
+	&__column {
+		margin: 0px 72px 0px 0px;
+		&:last-child {
+			margin: 0px 0px 0px 0px;
+		}
+		@media (max-width: 1220px) {
+			margin: 0px 52px 0px 0px;
+		}
+		@media (max-width: 600px) {
+			margin: 0px 0px 0px 0px;
+		}
+	}
+}
+
+.composition-column {
+	&__row {
+		display: flex;
+		align-items: center;
+	}
+}
+
+.composition-row {
+	&__img {
+	}
+	&__title {
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 250%;
+		margin: 0px 0px 0px 16px;
+	}
+}
 
 //=======================================================================================================
 

@@ -48,16 +48,6 @@ $('.menu__list').click(function (e) {
 });
 
 //Animation of the first block
-
-// $(".mainblock__body--show").fadeIn(400);
-// $(".mainblock__title span").fadeIn(400).delay(500);
-
-
-// $('.mainblock__body').fadeIn(300, function () {
-// 	$('.mainblock__title span').fadeIn(400, arguments.callee);
-// });
-
-
 function showText() {
 	$('.mainblock__body').removeClass('mainblock__body--hide');
 	$('.mainblock__body').addClass('mainblock__body--show').fadeOut(0).fadeIn(2500);
@@ -66,6 +56,26 @@ function showText() {
 }
 showText();
 
+//Changing the header style
+$(window).on("scroll", function () {
+	var scrolled = $(this).scrollTop();
+	if (scrolled > 80) {
+		$('.wrapper').addClass('scrolled');
+	}
+	if (scrolled <= 80) {
+		$('.wrapper').removeClass('scrolled');
+	}
+});
+
+//WOW.js activate
+new WOW().init();
+
+//Sliders
+$('.slider__feed').slick({
+	arrows: false,
+	dots: true,
+	infinite: false
+});
 
 //POPUP
 
