@@ -86,6 +86,33 @@
 	border-radius: 50%;
 }
 //=======================================================================================================
+.slider__ration {
+	position: relative;
+	min-width: 0;
+	text-align: center;
+	&-item {
+	}
+}
+.slider__ration .slick-dots li {
+	font-size: 0;
+	margin: 0px 4px;
+}
+.slider__ration .slick-dots {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.slider__ration .slick-dots button {
+	font-size: 0;
+	width: 8px;
+	height: 8px;
+	background-color: #ead1d0;
+	border-radius: 50%;
+}
+.slider__ration .slick-dots li.slick-active button {
+	background-color: #961914;
+	border-radius: 50%;
+}
 //=======================================================================================================
 //=======================================================================================================
 //=======================================================================================================

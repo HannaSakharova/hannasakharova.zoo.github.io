@@ -85,15 +85,6 @@ body {
 	.scrolled .header__img {
 		width: 32px;
 	}
-	// .scrolled .menu__body:before {
-	// 	content: "";
-	// 	position: fixed;
-	// 	height: 58px;
-	// 	padding: 0px 0px 10px 0;
-	// 	top: 0;
-	// 	left: 0;
-	// 	width: 100%;
-	// }
 }
 //</ОБОЛОЧКА>============================================================================================
 
@@ -133,6 +124,11 @@ body {
 	&__mainblock {
 	}
 	&__info {
+	}
+	&__rations {
+	}
+
+	&__calculate {
 	}
 }
 //=======================================================================================================
@@ -356,7 +352,6 @@ body {
 		}
 	}
 }
-
 .info__slider {
 	display: none;
 	@media (max-width: 600px) {
@@ -443,14 +438,12 @@ body {
 		}
 	}
 }
-
 .composition-column {
 	&__row {
 		display: flex;
 		align-items: center;
 	}
 }
-
 .composition-row {
 	&__img {
 	}
@@ -461,6 +454,215 @@ body {
 		margin: 0px 0px 0px 16px;
 	}
 }
+//=======================================================================================================
+.rations {
+	padding: 23px 0px 80px 0px;
+	&__container {
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 0px 0px 74px 0px;
+		@media (max-width: $md2 + px) {
+			margin: 0px 0px 64px 0px;
+			flex-direction: column;
+		}
+	}
+
+	&__title {
+		position: relative;
+		z-index: 2;
+		&-ellipse {
+			position: absolute;
+			width: 181px;
+			height: 81px;
+			top: -15px;
+			right: 0px;
+			transform: rotate(-15deg);
+			z-index: -1;
+			@media (max-width: $md4 + px) {
+				width: 156px;
+				height: 58px;
+				top: -5px;
+			}
+			@media (max-width: 368px) {
+				top: 47px;
+				right: 93px;
+			}
+		}
+		@media (max-width: 368px) {
+			text-align: center;
+		}
+	}
+
+	&__text {
+		max-width: 680px;
+		color: #000000;
+		@media (max-width: 1220px) and (min-width: $md2 + px) {
+			max-width: 550px;
+		}
+		@media (max-width: $md2 + px) {
+			max-width: 100%;
+			text-align: center;
+			margin: 20px 0px 0px 0px;
+		}
+		@media (max-width: $md4 + px) {
+			display: none;
+		}
+	}
+
+	&__body {
+	}
+
+	&__items {
+		display: flex;
+		margin: 0px -12px;
+		@media (max-width: $md2 + px) {
+			flex-wrap: wrap;
+			text-align: center;
+		}
+		@media (max-width: $md4 + px) {
+			display: none;
+		}
+	}
+
+	&__column {
+		flex: 0 1 25%;
+		padding: 0px 12px;
+		@media (max-width: $md2 + px) {
+			flex: 50%;
+			margin: 0px 0px 24px 0px;
+		}
+	}
+
+	&__item {
+	}
+	&__slider {
+		display: none;
+		@media (max-width: $md4 + px) {
+			display: block;
+		}
+	}
+}
+.item-rations {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	@media (max-width: $md4 + px) {
+		margin: 0px 0px 40px 0px;
+	}
+	&__img {
+		margin: 0px 0px 45px 0px;
+		img {
+			width: 280px;
+			height: 335px;
+			@media (max-width: 1220px) {
+				width: 230px;
+				height: auto;
+			}
+			@media (max-width: $md2 + px) {
+				width: 100%;
+			}
+			@media (max-width: $md4 + px) {
+				width: 280px;
+				height: 335px;
+			}
+		}
+	}
+
+	&__title {
+		font-weight: bold;
+		font-size: 16px;
+		line-height: 130%;
+		color: #000000;
+		margin: 0px 0px 4px 0px;
+	}
+
+	&__composition {
+		font-size: 13px;
+		line-height: 130%;
+		color: #9f9e9d;
+		margin: 0px 0px 16px 0px;
+	}
+
+	&__text {
+		font-size: 14px;
+		line-height: 140%;
+		color: inherit;
+		margin: 0px 0px 11px 0px;
+	}
+
+	&__value {
+		font-size: 13px;
+		line-height: 130%;
+		color: #9f9e9d;
+		margin: 0px 0px 24px 0px;
+	}
+
+	&__btn {
+		@media (max-width: $md2 + px) {
+			margin: 0 auto;
+		}
+	}
+}
+//=======================================================================================================
+.calculate {
+	&__container {
+		background-color: #ead1d0;
+		position: relative;
+		&:before {
+			content: url("../img/items/calculate-vector.png");
+			position: absolute;
+			top: 0px;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			@media (max-width: 600px) {
+				transform: rotate(90deg);
+			}
+		}
+	}
+	&__content {
+		padding: 53px 123px 53px 50px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@media (max-width: $md2 + px) {
+			padding: 53px;
+		}
+		@media (max-width: $md3 + px) {
+			flex-direction: column;
+			padding: 32px 22px;
+			text-align: center;
+		}
+	}
+	&__title {
+		z-index: 12;
+		font-weight: 500;
+		font-size: 28px;
+		line-height: 140%;
+		letter-spacing: 0.02em;
+		color: #000000;
+		@media (max-width: $md2 + px) {
+			font-size: 24px;
+		}
+		@media (max-width: $md3 + px) {
+			margin: 0px 0px 24px 0px;
+			font-size: 22px;
+		}
+		@media (max-width: $md4 + px) {
+			font-size: 20px;
+		}
+	}
+
+	&__btn {
+		z-index: 12;
+	}
+}
+//=======================================================================================================
 
 //=======================================================================================================
 

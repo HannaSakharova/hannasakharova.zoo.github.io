@@ -29,6 +29,17 @@
 	&:hover {
 		background-color: #75110d;
 	}
+	&-tranparent {
+		width: 160px;
+		background-color: transparent;
+		border: 1px solid #961914;
+		color: #961914;
+		transition: all 0.3s ease 0s;
+		&:hover {
+			background-color: #ead1d0;
+			border: 1px solid transparent;
+		}
+	}
 }
 //</BUTTONS>==========================================================================================
 

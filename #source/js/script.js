@@ -67,11 +67,16 @@ $(window).on("scroll", function () {
 	}
 });
 
-//WOW.js activate
-new WOW().init();
+//AOS activate
+AOS.init();
 
 //Sliders
 $('.slider__feed').slick({
+	arrows: false,
+	dots: true,
+	infinite: false
+});
+$('.slider__ration').slick({
 	arrows: false,
 	dots: true,
 	infinite: false

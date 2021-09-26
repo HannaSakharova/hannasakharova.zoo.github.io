@@ -2,22 +2,22 @@
 .title {
 	font-family: "Oswald", sans-serif;
 	font-weight: bold;
-	font-size: 54px;
+	font-size: 46px;
 	line-height: 130%;
 	letter-spacing: 0.02em;
-	// color: #ffffff;
-	color: #000;
+	color: #000000;
 	&-black {
-		color: #000;
+		// color: #000;
 	}
-	@media (max-width: $md2 + px) {
-		font-size: 52px;
-	}
-	@media (max-width: $md3 + px) {
-		font-size: 47px;
-	}
+	// @media (max-width: $md2 + px) {
+	// 	font-size: 52px;
+	// }
+	// @media (max-width: $md3 + px) {
+	// 	font-size: 47px;
+	// }
 	@media (max-width: $md4 + px) {
 		font-size: 40px;
+		line-height: 130%;
 	}
 }
 
