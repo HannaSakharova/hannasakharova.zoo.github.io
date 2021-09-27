@@ -99,6 +99,15 @@ $('.slider__ration').slick({
 	infinite: false
 });
 
+//Spoiler FAQ
+// $('.faq-spoiler__title').click(function (event) {
+// 	if ($('.faq-spoiler').hasClass('spoiler')) {
+// 		$('.faq-spoiler__title').not($(this)).removeClass('active');
+// 		$('.faq-spoiler__text').not($(this).next()).slideUp('active');
+// 	}
+// 	$(this).toggleClass('active').next().slideToggle(300);
+// });
+
 //POPUP
 
 
