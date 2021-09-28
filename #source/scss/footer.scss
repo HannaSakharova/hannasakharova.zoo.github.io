@@ -1,5 +1,253 @@
-footer {
+.footer {
+	&__body {
+		padding: 80px 0;
+		background-color: #961914;
+		position: relative;
+		@media (max-width: $md2 + px) {
+			padding: 70px 0;
+		}
+		@media (max-width: $md3 + px) {
+			padding: 60px 0;
+		}
+		&:before {
+			content: url(../img/items/vector-footer01.png);
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 20%;
+			left: 0;
+			@media (max-width: $md2 + px) {
+				content: none;
+			}
+		}
+		&:after {
+			content: url(../img/items/vector-footer02.png);
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			bottom: 0;
+			right: -92%;
+			@media (max-width: $md2 + px) {
+				right: -72%;
+			}
+		}
+	}
+	&__container {
+	}
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: $md2 + px) {
+			flex-direction: column;
+		}
+	}
+	&__column {
+	}
+	&__ask {
+		flex: 70%;
+		position: relative;
+		&-img {
+			position: absolute;
+			width: 104px;
+			height: 103px;
+			bottom: -33px;
+			right: -40px;
+			@media (max-width: $md2 + px) {
+				bottom: -55px;
+				right: 0px;
+			}
+			@media (max-width: $md3 + px) {
+				bottom: -55px;
+				right: -17px;
+			}
+		}
+	}
+	&__ask-title {
+		font-weight: 600;
+		font-size: 20px;
+		line-height: 140%;
+		color: #ffffff;
+		margin: 0px 0px 4px 0px;
+	}
+	&__ask-subtitle {
+		color: #fff;
+		margin: 0px 0px 34px 0px;
+	}
+	&__ask-form {
+	}
+	&__copy {
+		background-color: #69120e;
+	}
+	&__copy-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 30px 0px;
+		@media (max-width: $md3 + px) {
+			flex-direction: column;
+			align-items: flex-start;
+			padding: 24px 0px;
+		}
+	}
+	&__copy-text {
+		font-size: 12px;
+		line-height: 140%;
+		color: #ffffff;
+		opacity: 0.4;
+		@media (max-width: $md3 + px) {
+			margin: 0px 0px 8px 0px;
+			&:first-child {
+				margin: 0px 0px 24px 0px;
+			}
+		}
+	}
 }
-//====================================================================================================
-
+.footer-contacts {
+	flex: 30%;
+	margin: 0px 187px 0px 0px;
+	position: relative;
+	&:after {
+		content: url(../img/items/shine.png);
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 130px;
+		left: 290px;
+		@media (max-width: 1200px) {
+			left: 216px;
+		}
+		@media (max-width: $md2 + px) {
+			top: 159px;
+			left: 395px;
+		}
+		@media (max-width: $md3 + px) {
+			content: none;
+		}
+	}
+	@media (max-width: 1200px) {
+		margin: 0px 100px 0px 0px;
+	}
+	&__img {
+		&--dog {
+			position: absolute;
+			width: 110px;
+			height: 110px;
+			top: 0;
+			right: -155px;
+			@media (max-width: 1200px) {
+				right: -103px;
+			}
+			@media (max-width: $md2 + px) {
+				top: 90px;
+				right: 50px;
+			}
+			@media (max-width: $md3 + px) {
+				top: 90px;
+				right: -15px;
+			}
+			@media (max-width: $md4 + px) {
+				top: 80px;
+				right: -80px;
+			}
+		}
+		&--meat {
+			position: absolute;
+			width: 160px;
+			height: 160px;
+			top: 133px;
+			right: -136px;
+			@media (max-width: 1200px) {
+				right: -121px;
+			}
+			@media (max-width: $md2 + px) {
+				top: 160px;
+				right: 110px;
+			}
+			@media (max-width: $md3 + px) {
+				top: 349px;
+				right: -10px;
+				width: 81px;
+				height: 80px;
+			}
+			@media (max-width: $md4 + px) {
+				right: -77px;
+			}
+		}
+	}
+	&__title {
+		font-family: Oswald, sans-serif;
+		font-weight: bold;
+		font-size: 46px;
+		line-height: 130%;
+		letter-spacing: 0.02em;
+		color: #ffffff;
+		margin: 0px 0px 8px 0px;
+		@media (max-width: $md2 + px) {
+			font-size: 44px;
+		}
+		@media (max-width: $md3 + px) {
+			font-size: 42px;
+		}
+		@media (max-width: $md4 + px) {
+			font-size: 40px;
+		}
+	}
+	&__text {
+		color: #fff;
+		margin: 0px 0px 32px 0px;
+		a {
+			color: #ffffff;
+			border-bottom: 1px solid #fff;
+			transition: all 0.3s ease 0s;
+			&:hover {
+				border-bottom: 1px solid transparent;
+			}
+		}
+	}
+	&__phone {
+		font-weight: bold;
+		color: #fff;
+		margin: 0px 0px 24px 0px;
+	}
+	&__links {
+		display: flex;
+		flex-direction: column;
+		margin: 0px 0px 40px 0px;
+	}
+	&__link {
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 140%;
+		color: #ffffff;
+		margin: 0px 0px 16px 0px;
+		background-color: rgba($color: #fff, $alpha: 0.2);
+		border-radius: 8px;
+		width: 223px;
+		padding: 10px 13px 10px 44px;
+		position: relative;
+		transition: all 0.3s ease 0s;
+		&:before {
+			content: url(../img/logo/logo-whatsapp.svg);
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 8px;
+			left: 12px;
+		}
+		&:last-child {
+			margin: 0px 0px 0px 0px;
+			&:before {
+				content: url(../img/logo/logo-telegram.svg);
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 8px;
+				left: 12px;
+			}
+		}
+		&:hover {
+			background-color: rgba($color: #fff, $alpha: 0.4);
+		}
+	}
+}
 //====================================================================================================

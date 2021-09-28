@@ -107,6 +107,19 @@ $('.slider__ration').slick({
 // 	}
 // 	$(this).toggleClass('active').next().slideToggle(300);
 // });
+$('.faq-spoiler__header').click(function () {
+	const next = $(this).next();
+	const child = $(this).children();
+	if (next.hasClass('faq-spoiler__text--active')) {
+		next.removeClass('faq-spoiler__text--active');
+		child.removeClass('faq-spoiler__icon--active');
+	} else {
+		$('.faq-spoiler__text').removeClass('faq-spoiler__text--active');
+		next.addClass('faq-spoiler__text--active');
+		$('.faq-spoiler__icon').removeClass('faq-spoiler__icon--active');
+		child.addClass('faq-spoiler__icon--active');
+	}
+});
 
 //POPUP
 
