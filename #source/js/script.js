@@ -82,14 +82,7 @@ $('.slider__ration').slick({
 	infinite: false
 });
 
-//Spoiler FAQ
-// $('.faq-spoiler__title').click(function (event) {
-// 	if ($('.faq-spoiler').hasClass('spoiler')) {
-// 		$('.faq-spoiler__title').not($(this)).removeClass('active');
-// 		$('.faq-spoiler__text').not($(this).next()).slideUp('active');
-// 	}
-// 	$(this).toggleClass('active').next().slideToggle(300);
-// });
+//Spoiler FAQ 
 $('.faq-spoiler__header').click(function () {
 	const next = $(this).next();
 	const child = $(this).children();
@@ -104,7 +97,95 @@ $('.faq-spoiler__header').click(function () {
 	}
 });
 
-//POPUP
+//POPUPs
+const CLASS_LIST = {
+	MODAL: 'modal',
+	MODAL_ACTIVE: 'modal--active',
+	MODAL_CONTENT: 'modal-content',
+	MODAL_SCROLL: 'modal--scroll',
+	TRIGGER_OPEN: 'modal-open',
+	TRIGGER_CLOSE: 'modal-close'
+};
 
+document.addEventListener('click', (event) => {
+	//open
+	if (event.target.closest(`.${CLASS_LIST.TRIGGER_OPEN}`)) {
+		event.preventDefault();
 
+		const target = event.target.closest(`.${CLASS_LIST.TRIGGER_OPEN}`);
+		const modalId = target.getAttribute('href').replace('#', '');
+		const modal = document.getElementById(modalId);
 
+		document.body.style.overflow = 'hidden';
+		document.body.style.paddingRight = `${getScrollBarWidth()}px`;
+
+		modal.classList.add(CLASS_LIST.MODAL_ACTIVE);
+	}
+	//close
+	if (event.target.closest(`.${CLASS_LIST.TRIGGER_CLOSE}`) || event.target.classList.contains(CLASS_LIST.MODAL_ACTIVE)) {
+		event.preventDefault();
+
+		const modal = event.target.closest(`.${CLASS_LIST.MODAL}`);
+		modal.classList.remove(CLASS_LIST.MODAL_ACTIVE);
+
+		modal.addEventListener('transitionend', showScroll);
+	}
+});
+const getScrollBarWidth = () => {
+	const item = document.createElement('div');
+
+	item.style.position = 'absolute';
+	item.style.top = '-9999px';
+	item.style.width = '50px';
+	item.style.height = '50px';
+	item.style.overflow = 'scroll';
+	item.style.visibility = 'hidden';
+
+	document.body.appendChild(item);
+	const scrollBarWidth = item.offsetWidth - item.clientWidth;
+	document.body.removeChild(item);
+
+	return scrollBarWidth;
+};
+const showScroll = (event) => {
+	if (event.propertyName === 'transform') {
+		document.body.style.overflow = 'visible';
+		document.body.style.paddingRight = '';
+
+		event.target.closest(`.${CLASS_LIST.MODAL}`).removeEventListener('transitionend', showScroll);
+	}
+};
+
+//Select and Add and remove portions 
+const selected = document.querySelector('.dropdown-order__selected');
+const optionContainer = document.querySelector('.dropdown-order__options');
+const optionsList = document.querySelectorAll('.dropdown-order__option');
+const addPortion = document.querySelector('#addPortion');
+const removePortion = document.querySelector('#removePortion');
+const currentAmountPortions = document.querySelector('#currentAmoutPortions');
+const finalPrice = document.querySelector('#finalPrice');
+
+selected.addEventListener('click', () => {
+	optionContainer.classList.toggle('dropdown-order__options--active');
+});
+optionsList.forEach(o => {
+	o.addEventListener('click', () => {
+		selected.innerHTML = o.querySelector('label').innerHTML;
+		finalPrice.innerHTML = o.getAttribute('data-price');
+		selected.classList.add('dropdown-order__selected--active');
+		optionContainer.classList.remove('dropdown-order__options--active');
+
+		let price = o.getAttribute('data-price');
+		let value = parseInt(price);
+		addPortion.addEventListener('click', function () {
+			currentAmountPortions.innerHTML++;
+			finalPrice.innerHTML = currentAmountPortions.innerHTML * 1 * value + '₽';
+		})
+		removePortion.addEventListener('click', function () {
+			currentAmountPortions.innerHTML--;
+			if (currentAmountPortions.innerHTML < 1)
+				currentAmountPortions.innerHTML = 1;
+			finalPrice.innerHTML = currentAmountPortions.innerHTML * 1 * value + '₽';
+		})
+	});
+});

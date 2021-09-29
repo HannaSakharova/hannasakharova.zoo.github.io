@@ -1,0 +1,118 @@
+<!--  Modal ration -->
+<div class="modal modal-ration" id="modal-ration">
+	<div class="modal__content modal-ration">
+		<div class="modal-ration__header modal-header">
+			<div class="modal-header__close">
+				<button type="button" class="modal-close"> &times; </button>
+			</div>
+		</div>
+		<div class="modal-ration__body">
+			<div class="modal-ration__items">
+				<div class="modal-ration__column">
+					<div class="modal-ration__item modal-gallery">
+						<img src="img/feed/feed-03.jpg" alt="Feed" />
+					</div>
+				</div>
+				<div class="modal-ration__column">
+					<div class="modal-ration__item modal-info">
+						<div class="modal-info__title">Для взрослых собак </div>
+						<div class="modal-info__composition">Баранина/Кролик</div>
+						<div class="modal-info__text">Подходит для ежедвеного кормления. Богат животными белками и Омега-3.
+						</div>
+						<div class="modal-info__ingredients"><span>Состав:</span> Мякоть баранины (46,5%), мясо кролика
+							(23,5%), кости кролика (10%), печень баранины (5%), почки бараньи (2,5%), конопли (2%), шпинат
+							(1%), яблоко (1%), льняное масло,
+							конопляное масло.</div>
+						<div class="modal-info__nutritional"><span>Пищевая ценность на 100г:</span> 174.9 ккал, белки 16.45,
+							жиры 11.9, углеводы 0.60</div>
+						<div class="modal-info__value">500г/300г/100г</div>
+						<a href="#modal-order" class="modal-info__btn btn btn-tranparent btn-modal modal-open">Заказать</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Modal ration -->
+
+<!--  Modal order -->
+<div class="modal modal-order" id="modal-order">
+	<div class="modal__content modal-ration">
+		<div class="modal-ration__header modal-header">
+			<div class="modal-header__close">
+				<button type="button" class="modal-close"> &times; </button>
+			</div>
+		</div>
+		<div class="modal-ration__body">
+			<div class="modal-ration__items">
+				<div class="modal-ration__column">
+					<div class="modal-ration__item modal-gallery">
+						<img src="img/feed/feed-03.jpg" alt="Feed" />
+					</div>
+				</div>
+				<div class="modal-ration__column">
+					<div class="modal-ration__item modal-order">
+						<div class="modal-order__title">Для взрослых собак </div>
+						<div class="modal-order__composition">Баранина/Кролик</div>
+						<form action="#" class="modal-order__form form-order">
+							<input type="text" placeholder="Имя" class="form-order__input" required>
+							<input type="phone" placeholder="Телефон" class="form-order__input" required>
+							<input type="email" placeholder="Адрес" class="form-order__input" required>
+							<div class="form-order__value">
+								<div class="form-order__dropdown dropdown-order">
+									<div class="dropdown-order__container">
+										<div class="dropdown-order__options">
+											<div class="dropdown-order__option option-dropdown" data-price="828₽">
+												<input type="radio" name="value" id="opt1" class="option-dropdown__value">
+												<label for="opt1">700г</label>
+											</div>
+											<div class="dropdown-order__option option-dropdown" data-price="745₽">
+												<input type="radio" name="value" id="opt2" class="option-dropdown__value">
+												<label for="opt2">500г</label>
+											</div>
+											<div class="dropdown-order__option option-dropdown" data-price="550₽">
+												<input type="radio" name="value" id="opt3" class="option-dropdown__value">
+												<label for="opt3">300г</label>
+											</div>
+											<div class="dropdown-order__option option-dropdown" data-price="370₽">
+												<input type="radio" name="value" id="opt4" class="option-dropdown__value">
+												<label for="opt4">150г</label>
+											</div>
+											<div class="dropdown-order__option option-dropdown" data-price="300₽">
+												<input type="radio" name="value" id="opt5" class="option-dropdown__value">
+												<label for="opt5">100г</label>
+											</div>
+										</div>
+										<div class="dropdown-order__selected">Выберите объем</div>
+									</div>
+								</div>
+								<div class="form-order__amout">
+									<span id="addPortion"></span>
+									<span class="current-amount" id="currentAmoutPortions">1</span>
+									<span id="removePortion"></span>
+								</div>
+							</div>
+							<div class="form-order__agree">
+								<div class="form-order__check">
+									<label>Даю согласие на обработку персональных данных
+										<input type="checkbox" required />
+										<span></span>
+									</label>
+								</div>
+							</div>
+							<div class="form-order__footer">
+								<div class="form-order__price" id="finalPrice"></div>
+								<a href="#" class="modal-info__btn btn btn-tranparent btn-order">Заказать</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Modal order -->
+
+<!--  Modal order -->
+
+<!-- /Modal order -->
