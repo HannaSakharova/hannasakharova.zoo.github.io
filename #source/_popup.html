@@ -8,6 +8,10 @@
 		</div>
 		<div class="modal-ration__body">
 			<div class="modal-ration__items">
+				<div class="modal-ration__title">
+					<div class="modal-info__title">Для взрослых собак </div>
+					<div class="modal-info__composition">Баранина/Кролик</div>
+				</div>
 				<div class="modal-ration__column">
 					<div class="modal-ration__item modal-gallery">
 						<img src="img/feed/feed-03.jpg" alt="Feed" />
@@ -15,8 +19,8 @@
 				</div>
 				<div class="modal-ration__column">
 					<div class="modal-ration__item modal-info">
-						<div class="modal-info__title">Для взрослых собак </div>
-						<div class="modal-info__composition">Баранина/Кролик</div>
+						<div class="modal-info__title modal-info__title--hide">Для взрослых собак </div>
+						<div class="modal-info__composition modal-info__composition--hide">Баранина/Кролик</div>
 						<div class="modal-info__text">Подходит для ежедвеного кормления. Богат животными белками и Омега-3.
 						</div>
 						<div class="modal-info__ingredients"><span>Состав:</span> Мякоть баранины (46,5%), мясо кролика
@@ -45,6 +49,10 @@
 		</div>
 		<div class="modal-ration__body">
 			<div class="modal-ration__items">
+				<div class="modal-ration__title">
+					<div class="modal-info__title">Для взрослых собак </div>
+					<div class="modal-info__composition">Баранина/Кролик</div>
+				</div>
 				<div class="modal-ration__column">
 					<div class="modal-ration__item modal-gallery">
 						<img src="img/feed/feed-03.jpg" alt="Feed" />
@@ -52,11 +60,11 @@
 				</div>
 				<div class="modal-ration__column">
 					<div class="modal-ration__item modal-order">
-						<div class="modal-order__title">Для взрослых собак </div>
-						<div class="modal-order__composition">Баранина/Кролик</div>
+						<div class="modal-order__title modal-info__title--hide">Для взрослых собак </div>
+						<div class="modal-order__composition modal-info__composition--hide">Баранина/Кролик</div>
 						<form action="#" class="modal-order__form form-order">
 							<input type="text" placeholder="Имя" class="form-order__input" required>
-							<input type="phone" placeholder="Телефон" class="form-order__input" required>
+							<input type="number" placeholder="Телефон" class="form-order__input" required>
 							<input type="email" placeholder="Адрес" class="form-order__input" required>
 							<div class="form-order__value">
 								<div class="form-order__dropdown dropdown-order">
@@ -102,7 +110,8 @@
 							</div>
 							<div class="form-order__footer">
 								<div class="form-order__price" id="finalPrice"></div>
-								<a href="#" class="modal-info__btn btn btn-tranparent btn-order">Заказать</a>
+								<a href="#modal-thanks"
+									class="modal-info__btn btn btn-tranparent btn-order modal-open">Заказать</a>
 							</div>
 						</form>
 					</div>
@@ -113,6 +122,113 @@
 </div>
 <!-- /Modal order -->
 
-<!--  Modal order -->
+<!--  Modal after order -->
+<div class="modal modal-thanks" id="modal-thanks">
+	<div class="modal__content modal-ration">
+		<div class="modal-ration__header modal-header">
+			<div class="modal-header__close">
+				<button type="button" class="modal-close"> &times; </button>
+			</div>
+		</div>
+		<div class="modal-ration__body">
+			<div class="modal-ration__items">
+				<div class="modal-ration__column">
+					<div class="modal-ration__item modal-gallery">
+						<img src="img/feed/feed-03.jpg" alt="Feed" />
+					</div>
+				</div>
+				<div class="modal-ration__column">
+					<div class="modal-ration__item modal-thanks">
+						<div class="modal-thanks__title">Спасибо!</div>
+						<div class="modal-thanks__text">
+							<p>Ваш заказ оформлен и передан менеджеру. Мы свяжемся с вами для уточнения и подтверждения в
+								ближайшее время. </p>
+							<p>Если вы захотите дополнить свой заказ или уточнить какие-то детали – вы сможете это сделать у
+								оператора.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Modal after order -->
 
-<!-- /Modal order -->
+<!--  Modal calculate -->
+<div class="modal modal-calculate" id="modal-calculate">
+	<div class="modal__content modal-ration">
+		<div class="modal-ration__header modal-header">
+			<div class="modal-header__close">
+				<button type="button" class="modal-close"> &times; </button>
+			</div>
+		</div>
+		<div class="modal-calculate__body">
+			<div class="modal-calculate__header">
+				<div class="modal-calculate__title">Рассчет рациона</div>
+				<div class="modal-calculate__links">
+					<a href="#" class="modal-calculate__link footer-contacts__link footer-contacts__link--red">WhatsApp</a>
+					<a href="#" class="modal-calculate__link footer-contacts__link footer-contacts__link--red">Telegram</a>
+				</div>
+			</div>
+			<div class="modal-calculate__text">Заполните информацию и мы свяжемся с вами, чтобы подсказать с подбором
+				рациона
+				для вашего хвостика. Или напишите нам в мессендерах.</div>
+			<form action="" class="modal-calculate__form form-calculate">
+				<div class="form-calculate__body">
+					<div class="form-calculate__column">
+						<div class="form-calculate__radio radio-calculate">
+							<div class="radio-calculate__item">
+								<input type="radio" class="radio-calculate__input" id="radio1" name="puppyOrDog">
+								<label for="radio1" class="radio-calculate__label">Взрослая собака</label>
+							</div>
+							<div class="radio-calculate__item">
+								<input type="radio" class="radio-calculate__input" id="radio2" name="puppyOrDog">
+								<label for="radio2" class="radio-calculate__label">Щенок</label>
+							</div>
+						</div>
+						<div class="form-calculate__age">
+							<input type="number" placeholder="Вес (кг)">
+							<input type="number" placeholder="Возраст">
+						</div>
+						<div class="form-calculate__name">
+							<input type="text" placeholder="Ваше имя">
+						</div>
+					</div>
+					<div class="form-calculate__column">
+						<input type="number" placeholder="Телефон" class="form-calculate__phone">
+						<textarea placeholder="Если у вашего хвостика есть особенности здоровья – напишите об этом..."
+							class="form-calculate__textarea"></textarea>
+					</div>
+				</div>
+				<div class="form-calculate__footer">
+					<div class="form-calculate__agree">
+						<div class="form-order__check">
+							<label>Даю согласие на обработку персональных данных
+								<input type="checkbox" required />
+								<span></span>
+							</label>
+						</div>
+					</div>
+					<a href="#modal-answer" class="form-calculate__btn btn btn-calculate modal-open">Расчитать</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- /Modal calculate -->
+
+<!--  Modal answer-->
+<div class="modal" id="modal-answer">
+	<div class="modal__content modal-answer">
+		<div class="modal-ration__header modal-header">
+			<div class="modal-header__close">
+				<button type="button" class="modal-close"> &times; </button>
+			</div>
+		</div>
+		<div class="modal-ration__body">
+			<div class="modal-answer__title">Спасибо!</div>
+			<div class="modal-answer__text">Мы ответим вам в ближайшее время.</div>
+		</div>
+	</div>
+</div>
+<!-- /Modal answer -->
